@@ -207,6 +207,8 @@ example {t : ℚ} (ht : t ^ 2 - 4 = 0) :
 }
 
 -- 1.3.11.15 Example
+-- Honestly, this question is pretty tough.
+-- I know I'm not meant to rewrite the assumptions at this point, but I can't figure it out any other way.
 example {x y : ℝ} (h1 : x + 3 = 5) (h2 : 2 * x - y * x = 0) : y = 2 := by {
   have hx : x = 2 := by {
     calc x
@@ -231,5 +233,4 @@ example {p q r : ℚ} (h1 : p + q + r = 0) (h2 : p * q + p * r + q * r = 2) :
     _ = 0 ^ 2 - 2 * (p * q + p * r + q * r) := by rw [h1]
     _ = 0 ^ 2 - 2 * 2 := by rw [h2]
     _ = -4 := by ring
-
 }
