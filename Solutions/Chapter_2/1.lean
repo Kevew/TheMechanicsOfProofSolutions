@@ -107,5 +107,5 @@ example (x y : ℚ) (h : x * y = 1) (h2 : x ≥ 1) : y ≤ 1 := by {
   }
   rw [h3]
 
-  apply?
+  exact div_le_self rfl h2
 }
