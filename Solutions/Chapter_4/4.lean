@@ -7,7 +7,7 @@ def Prime (p : ℕ) : Prop :=
   2 ≤ p ∧ ∀ m : ℕ, m ∣ p → m = 1 ∨ m = p
 
 -- 4.4.4 Example
-example {p : ℕ} (hp : 2 ≤ p) (H : ∀ m : ℕ, 1 < m → m < p → ¬m ∣ p) : Prime p := by {
+theorem prime_test {p : ℕ} (hp : 2 ≤ p) (H : ∀ m : ℕ, 1 < m → m < p → ¬m ∣ p) : Prime p := by {
   constructor
   · apply hp -- show that `2 ≤ p`
   intro m hmp
