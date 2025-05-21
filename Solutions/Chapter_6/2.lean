@@ -197,7 +197,10 @@ example (n : ℕ) : (n + 1) ! ≤ (n + 1) ^ n := by {
   · simp only [zero_add, pow_zero]
     repeat rw [factorial]
     norm_num
-  · have h1: (k + 1) ^ k ≤ (k + 2) ^ k := by sorry
+  · have h0: k + 1 ≤ k + 2 := by exact Nat.le_succ (k + 1)
+    have h1: (k + 1) ^ k ≤ (k + 2) ^ k := by {
+      exact Nat.pow_le_pow_of_le_left h0 k
+    }
     calc (k + 1 + 1)!
     _ = (k + 1 + 1) * (k + 1)! := by rfl
     _ ≤ (k + 1 + 1) * (k + 1) ^ k := by rel [hk]
